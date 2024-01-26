@@ -1,9 +1,10 @@
-from django.urls import path
+from django.urls import path,include
 from .views import *
 from .models import *
 
 urlpatterns = [
     path('', store, name="store"),
     path('<slug:category_slug>/', store, name="products_by_category"), 
-    path('<slug:category_slug>/<slug:product_slug>/', product_detail, name="product_detail")
+    path('<slug:category_slug>/<slug:product_slug>/', product_detail, name="product_detail"),
+    path('search/', search, name='search')
 ] 
